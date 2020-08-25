@@ -5,9 +5,10 @@ import * as React from 'react';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
-import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
+import InfluenceScreen from '../screens/InfluenceScreen';
+import SuppressionScreen from '../screens/SuppressionScreen';
+import ElectionScreen from '../screens/ElectionScreen';
+import { BottomTabParamList, InfluenceParamList, SuppressionParamList, ElectionParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -16,18 +17,25 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="Influence"
       tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
       <BottomTab.Screen
-        name="TabOne"
-        component={TabOneNavigator}
+        name="Influence"
+        component={InfluenceNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
       />
       <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoNavigator}
+        name="Suppression"
+        component={SuppressionNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Election"
+        component={ElectionNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
@@ -44,30 +52,44 @@ function TabBarIcon(props: { name: string; color: string }) {
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
-const TabOneStack = createStackNavigator<TabOneParamList>();
+const InfluenceStack = createStackNavigator<InfluenceParamList>();
 
-function TabOneNavigator() {
+function InfluenceNavigator() {
   return (
-    <TabOneStack.Navigator>
-      <TabOneStack.Screen
-        name="TabOneScreen"
-        component={TabOneScreen}
+    <InfluenceStack.Navigator>
+      <InfluenceStack.Screen
+        name="InfluenceScreen"
+        component={InfluenceScreen}
         options={{ headerTitle: 'Tab One Title' }}
       />
-    </TabOneStack.Navigator>
+    </InfluenceStack.Navigator>
   );
 }
 
-const TabTwoStack = createStackNavigator<TabTwoParamList>();
+const SuppressionStack = createStackNavigator<SuppressionParamList>();
 
-function TabTwoNavigator() {
+function SuppressionNavigator() {
   return (
-    <TabTwoStack.Navigator>
-      <TabTwoStack.Screen
-        name="TabTwoScreen"
-        component={TabTwoScreen}
+    <SuppressionStack.Navigator>
+      <SuppressionStack.Screen
+        name="SuppressionScreen"
+        component={SuppressionScreen}
         options={{ headerTitle: 'Tab Two Title' }}
       />
-    </TabTwoStack.Navigator>
+    </SuppressionStack.Navigator>
+  );
+}
+
+const ElectionStack = createStackNavigator<ElectionParamList>();
+
+function ElectionNavigator() {
+  return (
+    <ElectionStack.Navigator>
+      <ElectionStack.Screen
+        name="ElectionScreen"
+        component={ElectionScreen}
+        options={{ headerTitle: 'Tab Two Title' }}
+      />
+    </ElectionStack.Navigator>
   );
 }

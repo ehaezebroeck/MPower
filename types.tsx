@@ -4,14 +4,19 @@ export type RootStackParamList = {
 };
 
 export type BottomTabParamList = {
-  TabOne: undefined;
-  TabTwo: undefined;
+  Influence: undefined;
+  Suppression: undefined;
+  Election: undefined;
 };
 
-export type TabOneParamList = {
-  TabOneScreen: undefined;
+export type InfluenceParamList = {
+  InfluenceScreen: undefined;
 };
 
-export type TabTwoParamList = {
-  TabTwoScreen: undefined;
+export type SuppressionParamList = {
+  SuppressionScreen: undefined;
 };
+
+export type ElectionParamList = {
+  ElectionScreen: undefined;
+}
