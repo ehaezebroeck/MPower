@@ -6,14 +6,19 @@ export default {
     screens: {
       Root: {
         screens: {
-          TabOne: {
+          Influence: {
             screens: {
-              TabOneScreen: 'one',
+              InfluenceScreen: 'Influence',
             },
           },
-          TabTwo: {
+          Suppression: {
             screens: {
-              TabTwoScreen: 'two',
+              SuppressionScreen: 'Suppression',
+            },
+          },
+          Election: {
+            screens: {
+              ElectionScreen: 'Election',
             },
           },
         },

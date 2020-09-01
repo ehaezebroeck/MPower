@@ -60,7 +60,7 @@ function InfluenceNavigator() {
       <InfluenceStack.Screen
         name="InfluenceScreen"
         component={InfluenceScreen}
-        options={{ headerTitle: 'Tab One Title' }}
+        options={{ headerTitle: 'Influence' }}
       />
     </InfluenceStack.Navigator>
   );
@@ -74,7 +74,7 @@ function SuppressionNavigator() {
       <SuppressionStack.Screen
         name="SuppressionScreen"
         component={SuppressionScreen}
-        options={{ headerTitle: 'Tab Two Title' }}
+        options={{ headerTitle: 'Suppression' }}
       />
     </SuppressionStack.Navigator>
   );
@@ -88,7 +88,7 @@ function ElectionNavigator() {
       <ElectionStack.Screen
         name="ElectionScreen"
         component={ElectionScreen}
-        options={{ headerTitle: 'Tab Two Title' }}
+        options={{ headerTitle: 'Election' }}
       />
     </ElectionStack.Navigator>
   );
